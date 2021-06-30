@@ -50,6 +50,12 @@ RUN dotnet build Nop.Plugin.Widgets.GoogleAnalytics.csproj -c Release
 WORKDIR /src/Plugins/Nop.Plugin.Widgets.NivoSlider
 RUN dotnet build Nop.Plugin.Widgets.NivoSlider.csproj -c Release
 
+# partner
+WORKDIR /src/Plugins/Nop.Plugin.Payments.PagSeguro
+RUN dotnet build Nop.Plugin.Payments.PagSeguro.csproj -c Release
+WORKDIR /src/Plugins/Nop.Plugin.Misc.Partner
+RUN dotnet build Nop.Plugin.Misc.Partner.csproj -c Release
+
 # publish project
 WORKDIR /src/Presentation/Nop.Web   
 RUN dotnet publish Nop.Web.csproj -c Release -o /app/published
